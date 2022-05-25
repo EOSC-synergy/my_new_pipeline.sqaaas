@@ -1,0 +1,16 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: 1.6.0-no_svcqa
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      this_repo:
+        commands:
+        - git rev-parse --is-inside-work-tree
+        container: qc.acc_slaphappy-aqua-seal
+timeout: 600
